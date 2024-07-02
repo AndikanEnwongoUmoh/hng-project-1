@@ -1,10 +1,10 @@
-import { Injectable, Logger, Req } from '@nestjs/common';
+import { Injectable, Query, Req } from '@nestjs/common';
 import axios from 'axios';
 import { Request } from 'express';
 
 @Injectable()
 export class AppService {
-  private readonly ipapiBaseUrl = 'https://ipapi.co'; //
+  private readonly ipapiBaseUrl = 'https://ipapi.co';
 
     async getIP(@Req() req: Request) {
       try {

@@ -1,13 +1,13 @@
-import { Controller, Get, Req } from '@nestjs/common';
+import { Controller, Get, Query, Req } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Request } from 'express';
 
-@Controller('ip')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  async getIP(@Req () req: Request){
+  @Get('hello?visitor_name=Mark')
+  async getIP(@Req () req: Request, @Query('visitor_name') visitor_name: string) {
     return await this.appService.getIP(req);
   }
   
