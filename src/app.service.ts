@@ -8,7 +8,7 @@ export class AppService {
 
     async getIP(@Req() req: Request) {
       try {
-        const ipApiResponse = await axios.get(`${this.ipapiBaseUrl}/json/`);
+        const ipApiResponse = await axios.get(`https://ipinfo.io/json/`);
         const { ip, city } = ipApiResponse.data;
     
         const weatherstackApiUrl = `http://api.weatherstack.com/current?access_key=2a5ccf8aa94cba3ccd6de4072108124f&query=${city}`;
