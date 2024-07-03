@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('?visitor_name=Mark')
-  async getIP(@Req () req: Request, @Query('visitor_name') visitor_name: string) {
+  async getIP(@Req () req: Request) {
     return await this.appService.getIP(req);
   }
   
