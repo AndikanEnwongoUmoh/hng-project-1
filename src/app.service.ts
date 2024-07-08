@@ -15,7 +15,7 @@ export class AppService {
         const weatherApiResponse = await axios.get(weatherstackApiUrl);
         const temperature = weatherApiResponse.data.current.temperature;
 
-        const greeting = `Hello, Mark! The temperature is ${temperature} degrees Celsius in ${city}.`;
+        const greeting = `Hello, Visitor! The temperature is ${temperature} degrees Celsius in ${city}.`;
 
         const responseBody = {
           client_ip: ip,

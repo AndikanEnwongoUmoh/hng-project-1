@@ -6,7 +6,7 @@ import { Request } from 'express';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('?visitor_name=Mark')
+  @Get('?visitor')
   async getIP(@Req () req: Request) {
     return await this.appService.getIP(req);
   }
